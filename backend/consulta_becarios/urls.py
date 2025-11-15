@@ -14,15 +14,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
+#from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from becarios.views import BecalImportadoViewSet
 
-router = DefaultRouter()
-router.register(r'becarios', BecalImportadoViewSet, basename='becarios')
+router = DefaultRouter()  # para generar de forma automatica las rutas para la API
+router.register(r'becarios', BecalImportadoViewSet, basename='becarios') # generar ruta 'becarios/'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-]
+    
+    path('api/', include(router.urls)),  # todas las rutas generadas dentro de api/
+]                                        # endpoint queda: /api/becarios/ (separar API del resto)
+
+
+
+#path('admin/', admin.site.urls),

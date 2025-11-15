@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'becarios',
+    'rest_framework',  # para usar clase y crear API
+    'becarios',  # para detectar las app's
 
     'corsheaders',
 ]
