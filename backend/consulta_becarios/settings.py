@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',  # para usar clase y crear API
     'becarios',  # para detectar las app's
 
-    'corsheaders',
+    'corsheaders', # Django necesita saber que existe esta libreria 
+                   # carga al arrancar el servidor
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True # pemite que angular acceda al backend
