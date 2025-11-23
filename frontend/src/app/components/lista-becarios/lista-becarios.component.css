@@ -1,0 +1,127 @@
+/* Centrado general */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* color de los recuadros que contiene info...*/
+.card {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 10px;
+  background-color: #f0f5f8;
+}
+
+/* FILTROS — TODOS MISMO TAMAÑO, PEGADOS */
+.filtros-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;                 /* elimina separaciones */
+  flex-wrap: nowrap;      /* mantiene todo en una fila */
+}
+
+.filtros-row .col-md-3 {
+  flex: 0 0 200px;        /* todos mismo tamaño exacto */
+  margin-right: 10px;     /* mínima separación */
+}
+
+input.form-control,
+select.form-control {
+  height: 45px;
+  font-size: 0.95rem;
+  width: 100%;            /* asegura que llenen su caja */
+}
+
+/* Botones del mismo tamaño, alineados y pegados */
+.botones-centro {
+  display: flex;
+  justify-content: center;
+  gap: 10px;              /* espacio perfecto */
+}
+
+.btn-primary,
+.btn-secondary {
+  width: 150px;
+  height: 45px;           /* mismo alto que los filtros */
+  font-size: 0.95rem;
+}
+
+/* Botón negro de la tabla */
+.btn-ver-info {
+  background-color: #000;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-ver-info:hover {
+  background-color: #333;
+}
+
+/* Tabla */
+.table {
+  font-size: 0.9rem;
+}
+
+.table-responsive {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Alineación columnas */
+.table thead tr th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table th:nth-child(1),
+.table th:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(1),
+.table td:nth-child(2),
+.table td:nth-child(3) {
+  text-align: left !important;
+  padding-left: 10px;
+}
+
+/* Columna del botón */
+.table th:last-child,
+.table td:last-child {
+  width: 130px;
+  text-align: center;
+}
+
+/* Card de detalles fija */
+.detalles-card {
+  position: sticky;
+  top: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Títulos centrados */
+.titulo-principal,
+.titulo-detalles {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.container {
+  background-color: #2f3a4a; /* color del fondo principal de la pagina*/
+  padding: 30px;
+  border-radius: 12px;
+}
+
+
+/* MISMO ALTO EN TODOS LOS FILTROS, el de 'busquedas' eran mas altos */
+input.form-control,
+select.form-control {
+  height: 48px !important;   /* ALTURA UNIFORME */
+  font-size: 0.95rem;
+  padding: 10px 12px;        /* relleno igual */
+  box-sizing: border-box;
+}
+

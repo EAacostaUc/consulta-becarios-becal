@@ -1,0 +1,122 @@
+<div class="container mt-4">
+  <div class="card p-4 shadow-sm">
+
+    <h3 class="mb-4 titulo-principal">Consulta de Becarios BECAL</h3>
+
+    <!-- FILTROS -->
+    <div class="row mb-3 filtros-row">
+
+      <div class="col-md-3">
+        <input type="text"
+          [(ngModel)]="filtroNombre"
+          class="form-control"
+          placeholder="Filtrar por nombre">
+      </div>
+
+      <div class="col-md-3">
+        <input type="text"
+          [(ngModel)]="filtroApellido"
+          class="form-control"
+          placeholder="Filtrar por apellido">
+      </div>
+
+      <div class="col-md-3">
+        <select class="form-control" [(ngModel)]="filtroSexo">
+          <option value="">Sexo</option>
+          <option value="femenino">Femenino</option>
+          <option value="masculino">Masculino</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <select class="form-control" [(ngModel)]="filtroTipoBeca">
+          <option value="">Tipo de beca</option>
+          <option value="maestrías">Maestria</option>
+          <option value="doctorado">Doctorado</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <select class="form-control" [(ngModel)]="filtroPaisDestino">
+          <option value="">País destino</option>
+          <option *ngFor="let pais of paisesDestino" [value]="pais">{{ pais }}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Botones, Filtrar y limppiar -->
+    <div class="row mb-3">
+      <div class="botones-centro">
+        <button class="btn btn-primary" (click)="filtrar()">Filtrar</button>
+        <button class="btn btn-secondary" (click)="limpiar()">Limpiar</button>
+      </div>
+    </div>
+
+    <!-- TABLA + DETALLES -->
+    <div class="row justify-content-center">
+
+      <!-- MENSAJE CUANDO NO HAY RESULTADOS, Lista de becarios vacia -->
+      <div class="col-md-8" *ngIf="becariosFiltrados.length === 0">
+        <div class="text-center p-4" style="font-weight: bold; font-size: 18px;">
+          No se encontraron resultados.
+        </div>
+      </div>
+
+      <!-- TABLA CUANDO HAY RESULTADOS -->
+      <div class="col-md-8" *ngIf="becariosFiltrados.length > 0">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <!--<th>Sexo</th>--> <!--quite la info que mostaba sexo, no es necesario, en info muestra todo-->
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let becario of becariosFiltrados">
+                <td>{{ becario.nombres }}</td>
+                <td>{{ becario.apellidos }}</td>
+                <!--<td>{{ becario.sexo }}</td>-->
+                <td>
+                  <button class="btn-ver-info" (click)="verDetalles(becario)">
+                    Ver información
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+      <!-- DETALLES -->
+      <div class="col-md-4" *ngIf="becarioSeleccionado">
+        <div class="card shadow-sm border-primary p-3 detalles-card">
+          <h5 class="text-primary titulo-detalles">Detalles del Becario</h5>
+
+          <hr />
+
+          <p><b>Nombre completo:</b> {{ becarioSeleccionado.nombres }} {{ becarioSeleccionado.apellidos }}</p>
+          <p><b>Sexo:</b> {{ becarioSeleccionado.sexo }}</p>
+          <p><b>Departamento:</b> {{ becarioSeleccionado.departamento_residencia }}</p>
+          <p><b>Área de Ciencia:</b> {{ becarioSeleccionado.area_ciencia }}</p>
+          <p><b>Subárea de Ciencia:</b> {{ becarioSeleccionado.subarea_ciencia }}</p>
+          <p><b>Sector Prioritario CONACYT:</b> {{ becarioSeleccionado.sector_prio_conacyt }}</p>
+          <p><b>Programa:</b> {{ becarioSeleccionado.nombre_programa_estudio }}</p>
+          <p><b>Universidad:</b> {{ becarioSeleccionado.universidad }}</p>
+          <p><b>País destino:</b> {{ becarioSeleccionado.pais_destino }}</p>
+          <p><b>Ciudad destino:</b> {{ becarioSeleccionado.ciudad_destino }}</p>
+          <p><b>Tipo de beca:</b> {{ becarioSeleccionado.tipo_beca_resumen }}</p>
+
+          <!--target_blank es solamente para abrir en otra pestanha-->
+          <p><b>CV Py:</b> <a href="{{ becarioSeleccionado.cvpy }}" target="_blank">Ver CV</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
