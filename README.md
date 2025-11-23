@@ -8,7 +8,8 @@ Backend: desarrollado con Python, Django y Django REST Framework. Se encarga de 
 
 Frontend: desarrollado con Angular. Proporciona la interfaz gráfica mediante la cual el usuario interactúa con el sistema.
 
-Funcionalidades principales
+
+Funcionalidades principales:
 
 Búsqueda de becarios por nombre y otros criterios.
 
