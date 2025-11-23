@@ -1,21 +1,19 @@
-El proyecto Consulta Becarios BECAL desarrollada con el objetivo de facilitar la búsqueda y visualización de información de los becarios del programa BECAL. Permite realizar consultas rápidas utilizando diferentes filtros, mostrando los datos de manera clara, ordenada y accesible para el usuario.
+Descripción del proyecto
+
+El proyecto Consulta Becarios BECAL fue desarrollado con el objetivo de facilitar la búsqueda y visualización de información de los becarios del programa BECAL. Permite realizar consultas rápidas utilizando distintos filtros, mostrando los datos de forma clara, ordenada y accesible para el usuario.
 
 El sistema está dividido en dos partes principales:
 
--Backend: desarrollado con Python, Django + Django REST Framework, encargado de gestionar la base de datos, procesar las consultas y exponer una API REST.
+Backend: desarrollado con Python, Django y Django REST Framework. Se encarga de gestionar la base de datos, procesar las consultas y exponer una API REST para el consumo de datos.
 
--Frontend: desarrollado con Angular, encargado de la interfaz gráfica donde el usuario interactúa con el sistema.
+Frontend: desarrollado con Angular. Proporciona la interfaz gráfica mediante la cual el usuario interactúa con el sistema.
 
+Funcionalidades principales
 
+Búsqueda de becarios por nombre y otros criterios.
 
+Visualización de resultados en una lista dinámica.
 
+Comunicación eficiente entre frontend y backend mediante una API REST.
 
-Funcionalidades principales:
-
--Búsqueda de becarios por nombre y otros criterios.
-
--Visualización de resultados en una lista dinámica.
-
--Comunicación eficiente entre frontend y backend mediante API REST.
-
--Interfaz amigable y responsive.
+Interfaz amigable y fácil de usar.
