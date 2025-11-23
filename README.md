@@ -7,6 +7,9 @@ El sistema está dividido en dos partes principales:
 -Frontend: desarrollado con Angular, encargado de la interfaz gráfica donde el usuario interactúa con el sistema.
 
 
+
+
+
 Funcionalidades principales:
 
 -Búsqueda de becarios por nombre y otros criterios.
